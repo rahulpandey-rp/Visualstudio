@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Form</title>
+	<link rel="stylesheet" type="text/css" href="form.css">
+</head>
+<body>
+	<header>
+		<h2>TO THE NEW</h2>
+		<nav class="nav">
+			<a href="#">Home</a>
+			<a href="#">Quick Help</a>
+		</nav>
+	</header>
+	<hr>
+	<form>
+		<div class="form">
+			<h4>Bug Report</h4>
+
+			<label>Title:*</label><br>
+			<input type="text" id="title" name="title"><br>
+
+			<label>Description:*</label><br>
+			<textarea id="desc" name="description" rows="4" cols="50"></textarea><br>
+
+			<label>Operating System:</label><br>
+			<select name="os" id="os">
+				<option value="window">Windows XP</option>
+    			<option value="linux">Linux</option>
+    			<option value="mac">Mac</option>
+    			<option value="ubuntu">Ubuntu</option>
+    		</select><br>
+
+			<label>Product:*</label><br>
+			<select name="product" id="product">
+				<option value="formoid">Formoid</option>
+    			<option value="bootsnipp">Bootsnipp</option>
+    			<option value="jotform">Jotform</option>
+    			<option value="farry">Faary</option>
+    		</select><br> 
+
+    		<label>Version:*</label><br> 
+    		<input type="text" id="version" name="version"><br>  
+
+    		<label>Licence:</label><br>		
+    		<input type="radio" id="free" name="licence" value="Free"> 
+    		<label>Free</label>
+    		<input type="radio" id="business" name="licence" value="Business"> 
+    		<label>Business</label><br>
+
+    		<label>Severity:</label><br>
+			<select name="severity" id="severity">
+				<option value="critical">Critical</option>
+    			<option value="major">Major</option>
+    			<option value="minor">Minor</option>
+    		</select><br> 
+
+    		<div class="file-upload">
+    			<label>Attachments:</label><br>
+    			<input type="file" id="file" name="file">
+    		</div>
+
+    		<div class="footer">
+    			<input type="submit" class="submit" value="Send">
+    		</div>
+
+		</div>
+	</form>
+	</section>
+</body>
+</html>
