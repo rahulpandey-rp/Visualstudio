@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
+from django.template.loader import render_to_string         
 # Create your views here.
 
 month_dict = {
@@ -37,9 +38,10 @@ def month_by_no(request, month):
 
 def monthly_task(request, month):
     try:
-        msg = month_dict[month]
-        html_msg = f"<h2>{msg}</h2>"
+        message = month_dict[month]
+        return render(request, "challenges/challenge.html", {
+            "month": month,
+            "msg": message
+        })
     except:
         return HttpResponseNotFound("This is invalid address")
-    else:
-        return HttpResponse(html_msg)
