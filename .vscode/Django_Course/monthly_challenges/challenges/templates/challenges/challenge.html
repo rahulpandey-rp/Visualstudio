@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block page_title%}
+    {{month|title}} Challenge
+{%endblock%}
+
+{%block content%}
+    {% include "challenges/includes/header.html" %}
+
+    <h1>{{month | title}} Challenge</h1>
+    {%if msg  is not None%}
+        <h2>{{msg}}</h2>
+    {% else %}
+        <h2>This month have no Challenge</h2>
+    {% endif %}
+{%endblock%}

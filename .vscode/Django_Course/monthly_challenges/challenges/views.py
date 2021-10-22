@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import Http404, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
 from django.template.loader import render_to_string         
 # Create your views here.
@@ -14,7 +14,7 @@ month_dict = {
     "july": "july",
     "august": "My birthday month",
     "september": "sep",
-    "october": "Birthday on 23rd",
+    "october": None,
     "november": "nov",
     "december": "dec"
 }
@@ -22,10 +22,10 @@ month_dict = {
 def view_months_index(request):
     list_items = ""
     months = list(month_dict.keys())
-    for month in months:
-        month_path = reverse("month-challenge", args=[month])
-        list_items += f"<li><a href='{month_path}'>{month}</a></li>"
-    return HttpResponse(f"<ol>{list_items}</ol>")
+    
+    return render(request, "challenges/index.html",{
+        "months_list": months
+    })
 
 def month_by_no(request, month):
     months_no = list(month_dict.keys())
@@ -44,4 +44,4 @@ def monthly_task(request, month):
             "msg": message
         })
     except:
-        return HttpResponseNotFound("This is invalid address")
+        raise Http404()
