@@ -1,0 +1,13 @@
+h3{
+    color: green;
+    margin: 2px;
+}
+button{
+    color: indigo;
+    background-color: indianred;
+}
+#para{
+    color: indigo;
+    padding: 3px;
+    font-size: 22px;
+}

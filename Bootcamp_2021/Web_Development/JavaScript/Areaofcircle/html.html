@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <h3>Click the following button to get the area and perimeter of circle.</h3>
+    <button onclick = "fun()"> Click me </button>
+    <p id = "para"></p>
+    <script> 
+        function fun(){
+            var r = prompt("Enter the radius of circle");
+            document.getElementById('para').innerHTML = 'The area of circle with radius '+r+' is: ' + Math.PI * r * r ;
+            }
+    </script> 
+</body>
+</html>
